@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery CSS styles</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/css_styles.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>jQuery Methods with CSS styles</h1>
+      <section class="col-md-3">
+      <h3>Adding and removing CSS styles</h3>
+      <p>CSS classes canbe added or removed to elements as style attributes with jQuery.</p>
+      <ul class="list">
+      <li><span>.css({'attr' : 'value'})</span></li>
+      <li><span>.css('attr')</span></li>
+      <li><span>.css('object')</span></li>
+      </ul>
+      <ul class="list">
+        <li>jQuery showing-hiding events:</li>
+        <li><span>.show()</span> sets css style {display: block;}</li>
+        <li><span>.hide()</span> sets css style {display: none;}</li>
+        <li><span>.addClass()</span> adds a whole css class to an element</li>
+        <li><span>.removeClass()</span> removes a whole css class from an element</li>
+        <li><span>.toggleClass()</span> shifts between addClass() and removeClass()</li>
+      </ul>
+      <pre>
+        <code>
+        <span>css style to start by hiding the content</span>
+        .image { display : none; }
+        </code>
+      </pre>
+      <div id='tours'>
+        <ul>
+          <li class='vacation usa'>
+            <h2>New York, New York</h2>
+            <span class='details'>4 hotels on Wall Street</span>
+            <span class='per-night col-md-3'><span class='price'>$275</span>/night</span>
+            <button class='book'>Book Now</button>
+            <ul class='image'>
+              <li>
+                <img src="assets/newyork1.jpg" />
+                <span >Brooklyn Bridge</span>
+              </li>
+            </ul>
+          </li>
+          <li class='vacation france col-md-1' data-discount='99'>
+            <h2>Paris, France</h2>
+            <span class='details'>3 Hotels on Champs Elysee</span>
+            <span class='per-night blue'><span class='price'>$300</span>/night</span>
+            <button class='book'>Book Now</button>
+            <ul class='image'>
+              <li>
+                <img src="assets/paris3.jpg" />
+                <span>Notre Dame de Paris</span>
+              </li>
+            </ul>
+          </li>
+          <li class='vacation uk col-md-1' data-discount='149'>
+            <h2>London, UK</h2>
+            <span class='details'>3 hotels on Kensington Street</span>
+            <span class='per-night'><span class='price'>$440</span>/night</span>
+            <button class='book'>Book Now</button>
+            <ul class='image'>
+              <li>
+                <img src="assets/london.jpg" />
+                <span>Tower of London</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-3">
+        <pre>
+          <code>
+              $(".vacation").on("mouseenter", function() {
+              $(this).addClass('highlight');
+              $(this).find(".image").show();
+              }).on("mouseleave", function() {
+              $(this).removeClass('highlight');
+              $(this).find(".image").hide();
+            });
+          </code>
+        </pre>
+      </div>
+      </section>
+
+      <section class="col-md-3">
+        <h3>Animate with css</h3>
+        <p>jQuery objects can be animated with <span>.animate()</span> method which takes a css attribute and time argument.</p>
+          <ul class="list">
+            <li>$(this).animate({'top' : '-10px'}, <span>400</span>) same as .animate({'top' : '-10px'})</li>
+            <li>$(this).animate({'top' : '-10px'}, <span>200</span>) same as .animate({'top' : '-10px'}, <span>'fast'</span>)</li>
+            <li>$(this).animate({'top' : '-10px'}, <span>600</span>) same as .animate({'top' : '-10px'}, <span>'slow'</span>)</li>
+            <li>The time argument also applies to <span>.slideToggle()</span> and <span>.fadeToggle()</span></li>
+          </ul>
+          <pre>
+            <code>
+              $(this).find(".per-night").animate({"top": "-14px","opacity": "1"}, "fast");
+            </code>
+          </pre>
+        <div id='tours'>
+          <ul>
+            <li class='vacation usa'>
+              <h2>New York, New York</h2>
+              <span class='details'>4 hotels on Wall Street</span>
+              <span class='per-night col-md-3'><span class='price'>$275</span>/night</span>
+              <button class='book'>Book Now</button>
+            </li>
+            <li class='vacation france col-md-1' data-discount='99'>
+              <h2>Paris, France</h2>
+              <span class='details'>3 Hotels on Champs Elysee</span>
+              <span class='per-night blue'><span class='price'>$300</span>/night</span>
+              <button class='book'>Book Now</button>
+            </li>
+            <li class='vacation uk col-md-1' data-discount='149'>
+              <h2>London, UK</h2>
+              <span class='details'>3 hotels on Kensington Street</span>
+              <span class='per-night'><span class='price'>$440</span>/night</span>
+              <button class='book'>Book Now</button>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-3">
+          <pre>
+            <code>
+               $('#tours').on('click', '.vacation', function() {
+                $(this).toggleClass('highlight');
+                if($(this).hasClass('highlight')) {
+                  $(this).animate({'top' : '-10px'}, fast);
+                } else {
+                  $(this).animate({'top' : '0px'}, fast);
+                }
+              });
+            </code>
+          </pre>
+        </div>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

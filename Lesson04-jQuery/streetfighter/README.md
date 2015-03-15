@@ -1,0 +1,1 @@
+Applying jQuery methods to animate a character. On .click() events Ryu throws hadouken and plays a sound clip.The animation is build with aseries of png and animated gifs grouped as children in one div. Two of the divs are set as display: none; and this css property is changed display: inline-block; with a mousedown() event.

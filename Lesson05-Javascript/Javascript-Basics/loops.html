@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - loops</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/loops.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <main>
+  <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+    <div class="container intro">
+    <h1>Loops</h1>
+    <p> Looping or iterating is a process whereby each item in an array or dictionary, gets acted upon by a function or any other action in a sequential process. The loop ends when a <span class="green">break</span> or a condition <span class="green">i < array.length;</span> is met.</p>
+    <section>
+      <h3>For loops</h3>
+      <p>For loops are best used when <span class="green">you know the amount of iterations</span>. Typical for loops follow these formulas:</p>
+      <pre>
+        <code>
+          <span class="green">For loop template</span>
+          for(var of my choice; condition if true code executes; increment or decrement the loop) {}
+
+          <span class="green">Incremental for loop i++</span>
+          for(var i = 0; i < array.length; i++) {}
+
+          <span class="green">Decremental for loop i--</span>
+          for(var i = array.length; i >= 0; i--) {}
+        </code>
+      </pre>
+      <p>Most often it makes sense to store the array.lenght in a variable rather to calculate it each time in an iteration.</p>
+      <pre>
+        <code>
+          for(var i = 0; var x = array.length; i < x; i++) {}
+        </code>
+      </pre>
+      <p>Normally a loop iterates through an array and the resulting data is sent to a new array with <span class="green">.push()</span> the newly populated array is returned as teh end result of the function.</p>
+      <pre>
+        <code>
+          var uwSum = function() {
+            var sum = 0;
+            var array = [];
+            for (var i = 1; i < 11; i++) {
+              sum = sum + i;
+              array.push(i + ' ' + sum + '\n');
+            }
+            return array.join("");
+          };
+
+          console.log(uwSum());
+
+          var average = function(array) {
+            var sum = 0;
+
+            for (var i = 0; i <= array.length; i++) {
+              sum+=i;
+            }
+            return sum/array.length;
+          };
+
+          var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+          console.log(average(array));
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>While loops</h3>
+      <p>While loops are useful when <span class="green">you don't know the amount of iterations</span> you only know that code needs tobe executed as long as condition is true. The loop stops as condition is false, it's essentially useful when the code needs to be stopped after one iteration (beacsue an event fired and condition is false) or an unlimited mount of iterations.</p>
+
+      <pre>
+        <code>
+        <span class="green">While loop template</span>
+        while(condition) {
+          function(){};
+        }
+
+        <span class="green">Condition is set as a variable outside loop</span>
+        var arrayCount = [];
+        var countdown = 10;
+        while (countdown > 0) {
+          countdown --;
+          arrayCount.push(countdown);
+        };
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>For in loops</h3>
+      <p>For in loops are best used when iterating throught properties of an object.</p>
+      <pre>
+        <code>
+          var person = {
+            firstName : 'Scott',
+            secondName : 'Zahra',
+            age : 7,
+            education : 'primary',
+            birthday : 15,
+            month : 12
+          };
+
+          for (var key in person) {
+            console.log(key + '=' + person[key]);
+          } <span class="green">firstName = Scott secondName = Zahra age = 7 education = primary…</span>
+        </code>
+      </pre>
+    </section>
+    </div>
+<!-- END: Content -->
+  </main>
+</body>
+</html>

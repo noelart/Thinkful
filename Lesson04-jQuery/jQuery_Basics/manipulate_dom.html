@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Manipulating the DOM</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/events.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+
+<!-- Content -->
+  <div class="container intro">
+    <h1>Manipulating the DOM</h1>
+    <section>
+      <div id="tours">
+        <ul>
+          <li class="vacation">
+              <h3 class="destination">New York</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book">Book now</button>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-2">
+        <h3>Functions that add or remove items to DOM</h3>
+        <ul class="list">
+          <li><span>.before()</span> adds $(jquery.obj) before the selector in a new parent-node</li>
+          <li><span>.prepend()</span> adds $(jquery.obj) as the first child of selector</li>
+          <li><span>.remove()</span> removes the $(jquery .obj) targeted as a var, element, class or id</li>
+          <li><span>.after()</span> adds $(jquery.obj) after the selector in a new parent node</li>
+          <li><span>.append()</span> adds $(jquery.obj) at the end of selector - last child</li>
+        </ul>
+      </div>
+        <div class="clear"></div>
+      </section>
+
+      <section>
+      <div class="col-md-3">
+        <pre>
+          <code>
+            var $price = $('&lt;p&gt;From $399&lt;/p&gt;');
+            var $contact = $('&lt;span&gt;Call 1-555-jquery-air to book this tour&lt;/span>');
+            var bookingPanel = function() {
+              $('.book').hover(function() {
+              $('.col-md-1').append($contact);
+            });
+            };
+          </code>
+        </pre>
+      </div>
+    </section>
+
+    <section>
+    <h3>Listening to an event</h3>
+    <p>To listen to an event say a button click <span>.on()</span> jQuery object method.</p>
+
+      <div id="tours">
+        <ul>
+          <li class="vacation">
+              <h3 class="destination">New York</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-button">Book now</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <div class="col-md-1 click-button"> -->
+
+      <div class="col-md-2">
+          <p>A typical event handler would be:<br />
+          <span>$('.button').on('click', function() {</span><br />
+            //function runs when 'click' event is triggered;<br />
+          });
+          </p>
+      </div>
+      <div class="clear"></div>
+
+    <div class="col-md-3">
+    <pre>
+      <code>
+          var $confirmedBooking = $('&lt;button class="book-clicked"&gt;Call 1-555-jquery-air&lt;/button&gt;')
+  $('.book-button').on('click', function() {
+    $(this).remove();
+    $('.click-button').append($confirmedBooking);
+  });
+      </code>
+    </pre>
+  </div>
+    </section>
+
+    <section>
+    <h3>Traversing the DOM</h3>
+      <div>
+      <p>Traversing the DOM to filter out one element from its siblings from a document based on given conditions.</p>
+      </div>
+      <div id="tours">
+        <ul>
+          <li class="usa tour">
+              <h4 class="destination">Destination</h4>
+              <h3 class="destination">New York</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+          <li class="europe tour">
+              <h4 class="destination">Destination</h4>
+              <h3 class="destination">Milan</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+          <li class="asia tour">
+              <h4 class="destination">Destination</h4>
+              <h3 class="destination">Tokyo</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-3">
+        <pre>
+          <code>
+              $('.tour').on('click', function() {
+              var $confirmedBooking = $('&lt;span&gt;Call 1-555-jquery-air&lt;/span&gt;');
+              $(this).closest('.tour').append($confirmedBooking);
+              $(this).find('button').remove();
+              });
+          </code>
+        </pre>
+      </div>
+    </section>
+
+    <section>
+      <h3>Using .closest()</h3>
+      <div>
+        <p>The <span>.closest()</span> method targets a particular parent node. This is especailly useful when you have siblings with the same class.</p>
+        <pre>
+          <code>
+            &lt;li class="usa tour"&gt;
+            &lt;li class="europe tour"&gt;
+            &lt;li class="asia tour"&gt;
+          </code>
+        </pre>
+        <p>If <span>$(this).parents('.tour').append($price)</span> is used on one of the .tour children, jQuery will append the $price elements to all '.tour' li parents. In order to append to only the '.tour' parent being clicked it's best to use <span>closest()</span> method.</p>
+        <pre>
+          <code>
+            $(this).closest('.tour').append($price);
+          </code>
+        </pre>
+      </div>
+      <div id="tours">
+        <ul>
+          <li class="vacation">
+              <h3 class="destination">New York</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+          <li class="vacation">
+              <h3 class="destination">Milan</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+          <li class="vacation">
+              <h3 class="destination">Tokyo</h3>
+              <span class="details">$1,899 for 7 nigths</span>
+              <button class="book-select">Book now</button>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-3">
+        <pre>
+          <code>
+              $('.vacation').on('click', function() {
+                var $newButton = $('&lt;button class="book-clicked"&gt;Call 1-555-jquery-air&lt;/button&gt;');
+                $(this).find('button').remove();
+                $(this).closest('.vacation').append($newButton);
+              });
+          </code>
+        </pre>
+      </div>
+    </section>
+  </div>
+<!-- END:Content -->
+</main>
+</body>
+</html>

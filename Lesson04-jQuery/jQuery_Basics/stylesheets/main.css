@@ -1,0 +1,484 @@
+/*===========================
+       main.css
+==============================*/
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #FDFBDD;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  color: #424242;
+  margin: 0;
+  line-height: 1.4em;
+}
+
+.clear {
+  clear: both;
+}
+
+/*============================
+           Layout
+==============================*/
+
+
+/*============================
+          Navigation
+=============================*/
+
+.nav-bar {
+  background: -webkit-linear-gradient(120deg, rgb(18, 113, 219), rgb(178, 61, 241));
+  background: -moz-linear-gradient(120deg, rgb(18, 113, 219), rgb(178, 61, 241));
+  background: -o-linear-gradient(120deg, rgb(18, 113, 219), rgb(178, 61, 241));
+  background: linear-gradient(120deg, rgb(18, 113, 219), rgb(178, 61, 241));
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.nav-bar img {
+  width: 70%;
+  height: auto;
+  padding: 2em;
+}
+
+.nav-bar .links {
+  margin: 0;
+  padding: 1.8em 0 1.8em 1.8em;
+  list-style: none;
+}
+
+.nav-bar .links li {
+  padding: 0;
+  display: block;
+  width: 100%;
+}
+
+/* setting padding and background transparent in 'a'*/
+.nav-bar .links li a {
+  background: transparent;
+  font-family: 'Lucida Grande', Arial, sans-serif;
+  font-size: 0.8em;
+  color: #FBF7E4;
+  padding: 1em 1em 1em 0.5em;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(253, 251, 221, 0.4);
+  display: block;
+}
+
+/* fill background and change border */
+.nav-bar .links li a:hover{
+  font-weight: bold;
+  color: rgb(18, 113, 219);
+  cursor: pointer;
+  background: #FDFBDD;
+  border-bottom: 2px solid rgba(219, 60, 19, 0.6);
+}
+
+
+.nav-bar .footer {
+  font-size: 0.7em;
+  color: #FBF7E4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2.5em
+}
+
+
+/*=========================
+      Columns
+=========================*/
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 13em;
+  position: absolute;
+  left: 14em;
+}
+
+.intro {
+  padding: 5em;
+  min-height: 600px;
+}
+
+.col-md-1 {
+  width: 29%;
+  float: left;
+}
+
+.col-md-1 .panel {
+  background: rgba(60, 80, 80, 0.5);
+  padding: 1em;
+  margin-right: 0.9em;
+}
+
+.col-md-1:last-child {
+  margin-right: 0;
+}
+
+.col-md-2 {
+  width: 63%;
+  float: left;
+  margin: 1em;
+}
+
+.col-md-3 {
+  width: 100%;
+  display: block;
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list li {
+  margin: 0.6em 0 0;
+}
+
+/*ol, ul {
+  list-style: none;
+}*/
+
+#tours > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#tours li {
+  width: 29%;
+  float: left;
+  background: rgba(180, 150, 120, 0.3);
+  padding: 1em;
+  margin-right: 0.9em;
+}
+
+#tours li:last-child {
+  margin-right: 0;
+}
+
+span.details {
+  text-align: center;
+  background: #82add8;
+  padding: 1em;
+  margin: 1em 0;
+  display: block;
+  color: #FFF;
+}
+
+
+.book, .book-button, .book-select {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1em;
+  background: #4cb64f;
+  text-align: center;
+  padding: 1em;
+  border: 0;
+  outline: 0;
+  color: #3c3c3c;
+  display: block;
+  text-transform: uppercase;
+}
+
+button.book-clicked {
+  width: 100%;
+  font-weight: bold;
+  font-size: 0.9em;
+  background: #AA9922;
+  color: #333333;
+  padding: 1.1em;
+  border: 0;
+  outline: 0;
+  display: block;
+  text-align: center;
+}
+
+button.expiring-filter, button.onsale-filter {
+  font-weight: bold;
+  color: #FFF;
+  font-size: 0.9em;
+  background: #CC5500;
+  padding: 1em;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+button.onsale-filter:hover, button.expiring-filter:hover {
+  color: #333333;
+  background: #DDAA00;
+  cursor: pointer;
+}
+
+
+/*==================================
+  Traversing and filtering styles
+====================================*/
+
+#filters ul {
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+#filters ul li {
+  float: left;
+  list-style: none;
+  margin-right: 2em;
+}
+
+#filters ul li:last-child{
+  margin-right: 0;
+}
+
+.highlighted {
+  background: #CCC;
+}
+
+
+/*======================
+      Events styles
+=======================*/
+
+.events #tour {
+  width: 100%;
+}
+
+button.show {
+  font-size: 0.8em;
+  color: #FFF;
+  background: rgb(18, 103, 169);
+  padding: 1em;
+  display: block;
+  border: 0;
+  outline: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+button.show:hover {
+  background: rgb(18, 113, 239);
+  cursor: pointer;
+}
+
+
+.photos {
+  float: left;
+  max-height: 105px;
+  padding: 0;
+  margin: 0;
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.photos li {
+  width: 140px;
+  float: left;
+  list-style: none;
+  text-align: center;
+  margin-left: 1em;
+}
+
+.photos li:first-child {
+  margin-left: 0;
+}
+
+.photos li img {
+  width: 100%;
+  height: 105px;
+}
+
+.photos li span {
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.8em;
+  color: #FEFDF3;
+  padding: 0.6em 0;
+  bottom: 0;
+  position: absolute;
+  display: none;
+}
+
+.ticket {
+  display: none;
+}
+
+
+/*=========================
+    Keyboard events style
+===========================*/
+
+div.vacation {
+  background: rgba(130, 250, 20, 0.4);
+  padding: 1em;
+}
+
+
+
+/* =======================
+    Link layover styles
+=========================*/
+
+#tours ul.comments {
+  padding-left: 0;
+  display: none;
+}
+
+#tours ul.comments li {
+  list-style: none;
+  background: none;
+  float: none;
+  width: 100%;
+  padding: 1em 0 0;
+}
+
+
+/*==========================
+      jQuery CSS styles
+============================*/
+
+#tours li.vacation {
+  width: 29%;
+  float: left;
+}
+
+#tours .vacation .per-night {
+  text-align: center;
+  display: block;
+  margin: 1em 0;
+  color: #333;
+}
+
+#tours .vacation .price {
+  color: #333;
+}
+
+#tours .image {
+  display: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+#tours .image li {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  background: none;
+  padding: 0.6em 0;
+}
+
+#tours .image li span {
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.8em;
+  color: #FEFDF3;
+  padding: 0.6em 0;
+  width: 100%;
+  display: block;
+}
+
+#tours .highlight {
+  background: rgba(230, 210, 80, 0.5);
+}
+
+.list {
+  padding-left: 0;
+}
+
+pre {
+  background: #FEFDF3;
+  border: 1px solid #424242;
+  border-radius: 5px;
+  margin: 0.8em 0;
+  white-space: pre-line;
+  white-space: -moz-pre-line;
+  white-space: -o-pre-line;
+  word-wrap: break-word;
+  padding-left: 1em;
+}
+
+code {
+  color: #424242;
+}
+
+footer {
+  background: #8E001C;
+  width: 100%;
+  height: 150px;
+}
+
+/*footer.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}*/
+
+/*===========================
+         Font styling
+=============================*/
+
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+  background: -webkit-linear-gradient(rgb(18, 113, 219), rgb(160, 200, 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3, h4 {
+  margin: 2em 0 0.8em;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: rgb(18, 113, 219);
+}
+
+h4 {
+  font-size: 1em;
+  color: #FFF;
+}
+
+h3.destination, h4.destination {
+  text-align: center;
+  margin: 0.8em 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+span {
+  color: #8E001C;
+  font-weight: bold;
+}
+
+span.blue {
+  color: rgb(18, 113, 219);
+  font-weight: bold;
+  padding: 0;
+}
+
+span.title {
+  font-weight: normal;
+  color: #FFF;
+  padding: 1em 1.6em;
+}
+
+footer p {
+  padding: 4em 0;
+  margin: 0;
+  color: #E7E8D1;
+}

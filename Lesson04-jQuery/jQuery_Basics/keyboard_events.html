@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Events</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/keyboard.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>jQuery Keyboard events</h1>
+      <section class="col-md-3">
+      <p>When the number in the textfield updates the number in span updates as well</p>
+      <ul class="list">
+        <li>jQuery keyboard events:</li>
+        <li>keypress</li>
+        <li>keydown - when user starts pressing a key</li>
+        <li>keyup - when user stops pressing a key</li>
+      </ul>
+      <pre>
+        <code>
+          &lt;input type="number" class="quantity" value="1" /&gt;
+        </code>
+      </pre>
+        <div class="vacation col-md-1" data-price="399">
+          <h2>Hawaiian vacation</h2>
+          <p>$399 per ticket</p>
+            <form>Tickets:
+              <input type="number" class="quantity" value="1" />
+            </form>
+            <p>Total price: $<span class="blue" id="total">399</span></p>
+        </div>
+        <div class="clear"></div>
+      <ul class="list">
+      <li><span>Get the price</span> from .data('price'). To convert this string into a number add <span>+</span> to the jQuery object</li>
+        <li><span>slideUp()</span> applies display: none; to an element.</li>
+        <li><span>slideToggle()</span> switches between slideDown() and slideUp() everytime the event-handler is called.</li>
+      </ul>
+      <div>
+        <pre>
+          <code>
+            $('.vacation').on('keyup', '.quantity', function() {
+            <span>Get the .data('price') from div attribute</span>
+            &lt;div class="vacation col-md-1" data-price="399"&gt;
+            <span>convert this string into a number add</span>
+              var $price = +$(this).closest('.vacation').data('price');
+
+              <span>Get the quantity user entered</span>
+              var $quantity = +$(this).val();
+              $('#total').text($price * $quantity);
+              });
+          </code>
+        </pre>
+        </div>
+      </section>
+
+      <section class="col-md-3">
+        <h3></h3>
+        <div class="tour vacation col-md-1" data-daily-price="357">
+          <h2>Paris, France Tour</h2>
+          <p>$<span id="total">2,499</span> for <span id="nights-count">7</span> Nights</p>
+          <p>
+            <label for="nights">Number of Nights</label>
+          </p>
+          <p>
+            <input type="number" id="nights" value="7">
+          </p>
+        </div>
+        <div class="clear"></div>
+        <pre>
+          <code>
+              $("#nights").on("keyup", function() {
+              <span>store nights val() and .data() attribtue from div</span>
+              var nights = +$(this).val();
+              var dailyPrice = +$(this).closest(".tour").data("daily-price");
+              $("#total").text(nights * dailyPrice);
+              $("#nights-count").text($(this).val());
+             });
+
+            <span>re-setting the nights val() to 7</span>
+            $("#nights").on("focus", function() {
+            $(this).val(7);
+            });
+          </code>
+        </pre>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

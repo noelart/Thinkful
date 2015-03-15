@@ -1,0 +1,241 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+/* End of Reset */
+
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #3C3C3C;
+  background: #FFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*========================
+  Layout
+==========================*/
+
+.container {
+  margin: 0 auto;
+  width: 970px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* Navigation */
+.top-navigation {
+  background: #FFF;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border-bottom: 1px solid #DDD;
+}
+
+.top-navigation > .content {
+  height: 70px;
+  padding: 0 15px;
+}
+
+.top-navigation .logo {
+  vertical-align: baseline;
+  height: 4.375em;
+}
+
+.top-navigation .links {
+  float: right;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 1em;
+  color: #838994;
+  margin-top: 25px;
+}
+
+.top-navigation .links li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.top-navigation .links li:first-child {
+  font-weight: 500;
+}
+
+.top-navigation .links li a {
+  text-decoration: none;
+  color: currentColor;
+
+}
+
+.top-navigation .links li a:hover {
+  cursor: pointer;
+  color: #333333;
+}
+
+/* hero */
+.introduction {
+  background: url(../assets/karma-background.png) no-repeat center bottom;
+  background-size: cover;
+  height: 735px;
+  overflow: auto;
+  text-align: center;
+}
+
+.orange-button {
+  background: #D56600;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 1.2em;
+  border: 0;
+  padding: 0.8em 1.4em;
+  display: block;
+  outline: none;
+  margin: 0 auto;
+}
+
+.orange-button:hover {
+  background: #CF3D0E;
+  cursor: pointer;
+}
+
+
+/*======================
+       Font styling
+========================*/
+
+.introduction h1, h3 {
+  color: #FFF;
+  line-height: 1.5em;
+}
+
+.introduction h1 {
+  margin-top: 6em;
+  font-size: 3em;
+}
+
+.introduction h3 {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+.cases {
+  margin: 4em 0;
+  /*overflow: hidden;*/ /* To push footer elements below floats*/
+}
+
+.cases h2{
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 2.7em;
+  color: #1d1e21;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.cases .devices {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  vertical-align: top;
+}
+
+.cases .devices h4 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 1.6em;
+  color: #1d1e21;
+  font-weight: 400;
+  margin: 1em 2em;
+}
+
+
+/*==========================
+       footer
+============================*/
+
+footer .content {
+  border-top: 1px solid #C3C3C3;
+}
+
+.social {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.social h5 {
+  color: #1d1e21;
+  font-size: 1.2em;
+}
+
+.social p {
+  color: #C3C3C3;
+}
+
+.social ul li {
+  display: inline-block;
+  margin: 15px 15px 15px 0;
+  background: #D56600;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  vertical-align: center;
+  padding-top: 10px;
+  color: #FFF;
+}
+
+.social ul li:last-child {
+  margin-right: 0;
+}
+
+.social ul li:hover {
+  background: #FFF;
+  color: #D56600;
+}
+
+.social ul li a {
+  color: currentColor;
+  font-size: 1.4em;
+}
+
+.social ul li a:hover {
+  cursor: pointer;
+}

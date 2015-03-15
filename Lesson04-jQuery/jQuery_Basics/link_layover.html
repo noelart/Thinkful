@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Link layover</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/link_layover.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>jQuery Link Layover</h1>
+      <section class="col-md-3">
+      <p>Links can be used to call jQuery functions such as showing or hiding content.</p>
+      <ul class="list">
+        <li>jQuery showing-hiding events:</li>
+        <li><span>.fadeIn()</span> makes contetn visible. Can take slow or fast as arguments.</li>
+        <li><span>.fadeOut()</span> makes content disappear.</li>
+        <li><span>.fadeToggle()</span> shifts between fadeIn() and fadeOut()</li>
+      </ul>
+      <pre>
+        <code>
+        <span>css style to start by hiding the content</span>
+        .comments { display : none; }
+        </code>
+      </pre>
+         <div id="tours">
+          <ul>
+            <li class="vacation" data-price="1889">
+                <h3 class="destination">New York</h3>
+                <span class="details">$1,899 for 7 nigths</span>
+                <a href="#" class="expand">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+            <li class="vacation" data-price="799">
+                <h3 class="destination">Milan</h3>
+                <span class="details">$799 for 7 nigths</span>
+                <a href="#" class="expand">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+            <li class="vacation" data-price="2999">
+                <h3 class="destination">Tokyo</h3>
+                <span class="details">$2,999 for 7 nigths</span>
+                <a href="#" class="expand">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      <ul class="list">
+      <li><span>Get the price</span> from .data('price'). To convert this string into a number add <span>+</span> to the jQuery object</li>
+        <li><span>slideUp()</span> applies display: none; to an element.</li>
+        <li><span>slideToggle()</span> switches between slideDown() and slideUp() everytime the event-handler is called.</li>
+      </ul>
+      <div>
+        <pre>
+          <code>
+             $('.vacation').on('click', '.expand', function(event) {
+             <span>To prevent link from refreshing page to the top</span>
+              event.preventDefault();
+              $(this).closest('.vacation')
+                     .find('.comments')
+                     .fadeToggle();
+            });
+          </code>
+        </pre>
+        </div>
+      </section>
+
+      <section class="col-md-3">
+        <h3></h3>
+         <div id="tours">
+          <ul>
+            <li class="vacation" data-price="1889">
+                <h3 class="destination">New York</h3>
+                <span class="details">$1,899 for 7 nigths</span>
+                <a href="#" class="expand-noalert">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+            <li class="vacation" data-price="799">
+                <h3 class="destination">Milan</h3>
+                <span class="details">$799 for 7 nigths</span>
+                <a href="#" class="expand-noalert">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+            <li class="vacation" data-price="2999">
+                <h3 class="destination">Tokyo</h3>
+                <span class="details">$2,999 for 7 nigths</span>
+                <a href="#" class="expand-noalert">Show Comments</a>
+                <ul class="comments">
+                  <li>"It has been a memorable holiday."</li>
+                  <li>"Really pleased with the hotel accomodation."</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <pre>
+          <code>
+                $('.expand-noalert').on('click', function(event) {
+                <span>Stops alert from showing</span>
+                event.stopPropagation();
+                event.preventDefault();
+                $(this).closest('.vacation')
+                        .find('.comments')
+                        .fadeToggle();
+                });
+                 $(".tour").on("click", function() {
+                  alert("This should not be called");
+                });
+          </code>
+        </pre>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

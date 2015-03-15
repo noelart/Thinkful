@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - Functions</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/functions.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Functions</h1>
+      <p>Functions are objects which store behaviours. Two types of functions:</p>
+      <ul class="list">
+      <li><span class="green">Named functions</span> are those with a name assigned to it before the brackets.
+        <pre>
+          <code>
+            <span class="green">function name(arg1, arg2){}</span>
+            function addSum(num1, num2) {
+              return num1 + num2;
+            };
+          </code>
+        </pre>
+      </li>
+      <li><span class="green">Anonymous functions</span> are functions with no name assigned before the brackets.
+        <pre>
+          <code>
+          <span class="green">function(){}</span>
+            var total = function(num1, num2) {
+              return num1 + num2;
+            };
+          </code>
+        </pre>
+      </li>
+      </ul>
+
+      <p>Here's an interesting blogpost with some functions basics <a href="http://esbueno.noahstokes.com/">noahstokes.com</a>. Functions are useful for re-using code by employing a <span class="green">function call</span>. This is a standard approach in programming, referred to <span class="green">DRY</span> (Do not Repeat Yourself)</p>
+
+      <section>
+        <h3>Scope</h3>
+        <p><span class="green">Scope</span> refers to the context were variables or fucntions are accesible. A code loop from 1 to max has var i as a <span class="green">local var</span>. This var is not accessible outside the loop.</p>
+            <pre>
+              <code>
+                <span class="green">var i as a local variable</span>
+                function fizzbuzzLong(max) {
+                var string = "";
+                var array = [];
+                for (var i = 1; i <= max; i++) {
+                 if ((i % 5 === 0) && (i % 3 === 0)) {
+                  string += 'FizzBuzz' + ', ';
+                 } else if (i % 3 === 0) {
+                  string += 'Fizz' + ', ';
+                 } else if (i % 5 === 0) {
+                  string += 'Buzz' + ', ';
+                 } else {
+                    string += i + ', ';
+                 }
+                }
+                return string;
+              }
+
+              console.log(fizzbuzzLong(30)); <span class='green'>1, 2, Fizz, 4, Buzz, … </span>
+              </code>
+            </pre>
+      </section>
+
+      <section>
+      <h3>Closures</h3>
+      <p>Is a the parent function() with a nested child function(). Closures <span class="green">return a value</span>. In the example below locally-scoped function <span class="green">check(num)</span> returns a string (either 'Buzz' or 'Fizz'). check(num) cannot be called outside the fizzbuzzer() block.</p>
+      <pre>
+        <code>
+        <span class="green">Closure returning a value</span>
+          function fizzbuzzer(max) {
+              var array = [];
+
+              function check(num) {
+                var string = '';
+                if (num % 3 === 0) { string +='Fizz'; }
+                if (num % 5 === 0) { string +='Buzz'; }
+                return string || num;
+              }
+
+              for (var i = 1; i <= max; i++) {
+                array.push(check(i));
+              }
+              return array;
+            }
+
+            console.log(fizzbuzzer(30));
+        </code>
+      </pre>
+
+      <p>Closures can return a function() as well. In the example below the closure returns a function that takes an other argument. The returned function is avalibale outside the scope of the closure.</p>
+      <pre>
+        <code>
+          function adder(x) {
+            return function(y) {
+              return x + y;
+            }
+          }
+
+          var add3 = adder(3);
+          var add5 = adder(5);
+
+          console.log(add3(5)); <span class="green">8</span>
+          console.log(add5(5)); <span class="green">10</span>
+        </code>
+      </pre>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

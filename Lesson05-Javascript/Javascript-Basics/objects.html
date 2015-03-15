@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics-Objects</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/objects.js"></script>
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+      <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+<!-- Content -->
+    <div class="container intro">
+      <h1>Objects</h1>
+      <p>Objects are composite because they can combine the simple data types you’ve studied so far: strings, numbers, and functions. An object is a key-value store for both values and functions <span class="green">{ property: “value” }</span>. Objects have the follwoign characteristics:</p>
+      <section>
+        <ul class="list">
+        <li><span class="green">Properties</span> are distinct data types belogning to an object.
+          <pre>
+            <code>
+              var Person = function(firstName, age, role) {
+                  this.nem = firstName;
+                  this.age = years;
+                  this.role = role;
+              };
+
+            var newEmployee = new Person('Jon', 26, 'CEO');
+
+            </code>
+          </pre>
+        </li>
+        <li><span class="green">Methods</span> are functions which are property of an object.
+          <pre>
+            <code>
+              <span class="green">Object-based literal</span>
+              var client = {
+                firstName: 'John', lastName: 'Rogers',
+                concatName: function(){
+                return this.firstName + ' ' + this.lastName;
+                }
+              };
+              var name = client.concatName();
+            </code>
+          </pre>
+        </li>
+        <li><span class="green">Scope</span> refers to the level in a hierarchy at which a set of variable names refer to a respective set of values.  Each object ford anf tesla separately binds the variable <span>brand</span> and <span>engine</span> to a unique name space.
+          <pre>
+            <code>
+            <span class="green">function(){}</span>
+              var Car = function(name, num, year) {
+                this.brand = name;
+                this.engine = num;
+                this.year = year;
+              };
+
+              var ford = new Car("Ford", 1800, "1980" );
+              var tesla = new Car("Tesla", 150, "2014");
+              console.log('Brands: ' + ford.brand + '\t' + tesla.brand + '\n' + 'Capacity: ' + ford.engine + '\t' + tesla.engine);
+            </code>
+          </pre>
+        </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Classes and inheritance</h3>
+        <p>In JavaScript, every object inherits from a parent object.</p>
+        <ul class="list">
+          <li>A function inherits from <span class="green"> &gt; Function</span> object <span class="green"> &gt; Object</span> object <span class="green"> &gt; null</span> object.</li>
+          <li>An array inherits from <span class="green"> &gt; Array </span> object <span class="green"> &gt; Object </span> object <span class="green"> &gt; null </span> object.</li>
+        </ul>
+      </section>
+    </div>
+
+  </main>
+
+</body>
+</html>

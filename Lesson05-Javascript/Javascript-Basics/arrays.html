@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - Arrays</title>
+
+    <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/arrays.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+    <div class="container intro">
+      <h1>Arrays</h1>
+      <section>
+        <h3>Arrays</h3>
+        <p>An array is a collection Object that has elements indexed. The elements can be accessed by calling their index. Arrays can hold values of any type, from Number to String to Function.</p>
+        <pre>
+          <code>
+            var sports = [];
+            sports[0] = 'running';
+            sports[1] = 'cycling';
+            sports[2] = 'trekking';
+
+            console.log(sports); <span class='green'>[ 'running', 'cycling', 'trekking' ]</span>
+          </code>
+        </pre>
+        <p>Arrays have a variety of array methods:</p>
+        <ul class="list">
+          <li><span class="green">.length</span> lists number of elements in array.</li>
+          <li><span class="green">.concat()</span> joins one or more arrays into one array
+            <pre>
+              <code>
+                var flowers = ['Lilly', 'Rose', 'Tulip'];
+                var colors = ['red', 'blue', 'yellow'];
+                var colorFlowers = flowers.concat(colors);
+                console.log(colorFlowers); <span class="green">[ 'Lilly', 'Rose', 'Tulip', 'red', 'blue', 'yellow' ]</span>
+              </code>
+            </pre>
+          </li>
+          <li><span class="green">.indexOf()</span> returns the index of an item in the array</li>
+          <li><span class="green">.lastIndexOf()</span> searches from the end of array for the last item's index.
+            <pre>
+              <code>
+                var transport = ['car', 'bus', 'train', 'airplane', 'taxi', 'ferry', 'train'];
+                console.log(
+                  transport.indexOf('train'), <span class="green">2</span>
+                  transport.lastIndexOf('train')  <span class="green">6</span>
+                );
+              </code>
+            </pre>
+          </li>
+          <li><span class="green">.shift()</span> removes and returns the first element of an array</li>
+          <li><span class="green">.pop()</span> removes and returns last element of array
+            <pre>
+              <code>
+                function firstitem(array) {
+                  return array.shift();
+                }
+
+                function lastItem(array) {
+                  return array.pop();
+                }
+
+                console.log(
+                  firstitem(['car', 'bus', 'train', 'airplane', 'taxi', 'ferry']),
+                  lastItem(['car', 'bus', 'train', 'airplane', 'taxi', 'ferry'])
+                ); <span class="green">car ferry</span>
+              </code>
+            </pre>
+          </li>
+          <li><span class="green">.push()</span> adds a new element to then end of array</li>
+          <li><span class="green">.unshift()</span> adds a new element at the beginning of array and returns new length.
+            <pre>
+              <code>
+                function addFirstItem(array, item) {
+                  return array.unshift(item);
+                }
+
+                function addlastItem(array, item) {
+                  return array.push(item);
+                }
+
+                var adventureSports = ['paragliding', 'kayaking'];
+                addlastItem(adventureSports, 'snowboarding');
+                addFirstItem(adventureSports, 'buggykiting');
+
+                console.log(adventureSports); <span class="green">[ 'buggykiting', 'paragliding', 'kayaking', 'snowboarding' ]</span>
+              </code>
+            </pre>
+          </li>
+          <li><span class="green">.reverse()</span> reverses the order of elements and returns the reversed array.</li>
+          <li><span class="green">.slice()</span> returns a section of the array</li>
+          <li><span class="green">.sort()</span> sorts the elements in the array and returns the sorted array</li>
+          <li><span class="green">.splice()</span> adds and removes elements from the array and returns the removed elements array</li>
+          <li><span class="green">.toString()</span> creates a string from the elements in an array</li>
+          <li><span class="green">.valueOf()</span> returns the primitive values of an array as a comma-delimited string.</li>
+          <li><span class="green">.filter()</span> filters an array and returns items that match.</li>
+          <li><span class="green">.map()</span> maps the elements of an array and returns a new array with the mapped data.</li>
+          <li><span class="green">.reduce()</span> reduces array elements a single value.</li>
+          <li><span class="green">.forEach()</span> iterates through the array elements.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

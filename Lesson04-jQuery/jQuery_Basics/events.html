@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Events</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/domload.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro vacations">
+      <h1>jQuery Events</h1>
+      <section class="col-md-3">
+      <ul class="list">
+        <li><span>slideDown()</span> shows an element. The element would have a css style of <span>display: none;</span></li>
+        <li><span>slideUp()</span> applies display: none; to an element.</li>
+        <li><span>slideToggle()</span> switches between slideDown() and slideUp() everytime the event-handler is called.</li>
+      </ul>
+      <div>
+        <pre>
+          <code>
+              $('#tour').on('click', 'button', function() {
+                $('.photos').slideToggle();
+              });
+          </code>
+        </pre>
+        </div>
+      </section>
+
+      <section class="col-md-3">
+        <h3>on() events</h3>
+        <p>Event-handlers can be hoisted in their own anonymous function and called when needed in the on() jQuery function. Fucntion is called immedaitely if it is passed as an argument as follows <span>showTicket()</span></p>
+        <pre>
+          <code>
+            <span>Anonymous Function</span>
+            function showTicket() {
+            $(this).closest('.confirmation').find('.ticket').slideDown();
+            }
+
+            <span>Function called by jQuery when event triggered</span>
+            $('.confirmation').on('click', 'button', showTicket);
+            <span>Function called by jQuery immediately</span>
+            $('.confirmation').on('mouseleave', 'h2', showTicket());
+          </code>
+        </pre>
+        <div class="confirmation">
+        <h2>Paris, France Tour&nbsp;<i class="fa fa-bookmark"></i></h2>
+          <p>$2,499 for 7 Nights</p>
+          <button class="show">See vacation package details</button>
+          <ul class="ticket list">
+            <li><strong>Hotel</strong> 7 nights</li>
+            <li><strong>Special offer</strong> $1 300</li>
+            <li><storng>Fight:</storng> 827</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+        <ul class="list">
+        <li><h3>These are other mouse events availbale in jQuery</h3></li>
+          <li>
+          <ul class="list col-md-1">
+            <li>These are <span class="blue">mouse movement</span> events:</li>
+              <li>mouseenter</li>
+              <li>mouseleave</li>
+              <li>mouseup</li>
+              <li>mousedown</li>
+              <li>mouseout</li>
+              <li>mouseleave</li>
+            </ul>
+            <ul class="list col-md-1">
+              <li>These are <span class="blue">mouse click</span> events:</li>
+              <li>click</li>
+              <li>dbclick</li>
+              <li>focusin</li>
+              <li>focusout</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      </section>
+
+      <section class="col-md-3">
+        <h3></h3>
+          <div id="tour">
+          <h2>Paris, France Tour</h2>
+          <p>$2,499 for 7 Nights</p>
+          <button class="show">See photos from our last tour</button>
+          <ul class="photos">
+            <li>
+              <img src="assets/paris1.jpg">
+              <span>Arc de Triomphe</span>
+            </li>
+            <li>
+              <img src="assets/paris2.jpg">
+              <span>The Eiffel Tower</span>
+            </li>
+            <li>
+              <img src="assets/paris3.jpg">
+              <span>Notre Dame de Paris</span>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </section>
+
+       <section class="col-md-3">
+        <h3>on() events</h3>
+        <p>This text should be below the list of images triggered by slideToggle() jquery function on blue button. Probably this is due to the css style dislpay: none; and the absolute position poperty on <span>.photos</span></p>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

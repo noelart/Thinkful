@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - Strings</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/strings.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Javascript basics - Strings</h1>
+      <section class="col-md-3">
+        <h3>Introduction to strings</h3>
+        <p>A string is a collection of characters that is used to represent text. You can create a string by enclosing in single or double quotes. Starting and ending delimiters must match.</p>
+        <pre>
+          <code>
+            var story = '"This is what I meant by success" said the developer on completing the app right on his work\'s deadline';
+            console.log(story);
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Concatenation</h3>
+        <p>Numbers, variables and strings can be concatenated together with a <span>+</span> returning a new string. Similalry using <span>+=</span> new strings canbe added to original string variable.</p>
+        <pre>
+          <code>
+          var string = "This is a number concatenated to a string" + 22;
+          console.log(typeof string); <span class="green">string</span>
+
+          var message = 'Hello';
+          message += ', Pierre';
+          console.log(message); <span class="green">'Hello, Pierre'</span>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+      <h3>parseInt() and parseFloat()</h3>
+      <p>A data-type string with a number can be converted to an integer with <span>parseInt()</span> or a float with <span>parseFloat()</span></p>
+      <pre>
+        <code>
+          var intFromString = parseInt('45k');
+          console.log(typeof intFromString); <span class="green">number</span>
+        </code>
+      </pre>
+      </section>
+
+      <section>
+      <h3>Substrings</h3>
+      <p><span>substring(arg1, arg2)</span> takes two arguments: <span>arg1</span> substring begins and <span>arg2</span> where it ends. Second arg is optional - it defaults to the end of the string when not declared.</p>
+      <pre>
+        <code>
+          var message = 'Hello World!';
+          var firstString = message.substring(0, 5);
+          var secondString = message.substring(6, 11);
+          var worldMark = message.substring(6);
+
+          console.log(firstString + '\n' + secondString + '\n' + worldMark); <span class="green">Hello World World!</span>
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h3>indexOf() lastIndexOf() charAt()</h3>
+        <p>Stign methods to locate the index of a substring or a character</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i> indexOf('substring') locate the first occurance of a substring</li>
+          <li><i class="fa fa-check"></i> lastIndexOf('substring') locate the last occurance of a substring</li>
+          <li><i class="fa fa-check"></i> charAt(index) locates the character at a particluar index</li>
+        </ul>
+        <pre>
+          <code>
+          var searchTerm = 'San Francisco';
+          var address = 'Hotel San Francisco, 123 Market Street, San Francisco, CA';
+          var cityIndex = address.indexOf(searchTerm);
+          var cityChar = address.charAt(44);
+          var cityLastIndex = address.lastIndexOf(searchTerm);
+
+          console.log('=====================' + '\n' + cityIndex + '\n' + cityChar + '\n' + cityLastIndex); <span class="green">6 F 40</span>
+          </code>
+        </pre>
+
+        <pre>
+          <code>
+            var stringBetweenMatches = function(searchString, string) {
+              var startString = string.indexOf(searchString) + searchString.length;
+              var lastString = string.lastIndexOf(searchString);
+              var stringMatch = string.substring(startString, lastString);
+              return stringMatch;
+            };
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Comparison operator</h3>
+        <p>Checking for mathcing strings witha comparison operator.</p>
+        <ul class="list">
+          <li><span class="green">==</span> will check if two strings are the same. If strings are the same returns true.</li>
+          <li><span class="green">!=</span> will check if two strings are not the same. If strings are not the same returns true.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Special characters</h3>
+        <p>Backslash is the most used special character.</p>
+        <ul class="list">
+          <li><span class="green">\t</span> tab</li>
+          <li><span class="green">\n</span> new line</li>
+          <li><span class="green">\r</span> carraige return</li>
+          <li><span class="green">\'</span> start/end string</li>
+          <li><span class="green">\\</span> backslash</li>
+          <li><span class="green">\uHHHH</span> embed a HHHH (4-hexadecimal code) as a unicode string</li>
+        </ul>
+        <pre>
+          <code>
+            var specialChars = function(){
+            var template  =  'String special characters: '
+                          +   '\n'
+                          +   'New line'
+                          +   '\r'
+                          +   'Carriage return'
+                          +   '\n'
+                          +    'Tabbed content'
+                          +    '\t\t'
+                          +     'to right'
+                          +     '\n'
+                          +     'Embedded \'quote\' in a string'
+                          +     '\n'
+                          +     '\u20AC'
+                          +     20;
+            return template;
+          };
+          console.log(specialChars());
+          </code>
+        </pre>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

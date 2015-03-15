@@ -1,0 +1,258 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+/* End of Reset */
+
+
+
+body {
+  background: #FFA848;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.clear {
+  clear: both;
+}
+
+
+/*===============
+      Layout
+==================*/
+
+main {
+  min-height: 100%;
+  margin-bottom: -270px;
+  height: auto !important;
+}
+
+.intro {
+  background: url(../images/skyline.png) no-repeat;
+  background-position: 50% 80%;
+  background-size: cover;
+  width: 100%;
+  min-height: 650px;
+  text-align: center;
+  overflow: auto;
+}
+
+.container {
+  width: 928px;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 100%;
+  margin: 1.6em auto;
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0 auto;
+}
+
+input {
+  float: left;
+  width: 400px;
+  height: 4em;
+  border: none;
+  margin-right: 2em;
+}
+
+input[placeholder] {
+  font-size: 1em;
+  padding-left: 1em;
+}
+
+::-webkit-input-placeholder {
+  color: #C3C3C3;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #C3C3C3;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #C3C3C3;
+}
+
+::-ms-input-placeholder {
+  color: #C3C3C3;
+}
+
+.start-button {
+  float: left;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  background: transparent;
+  border: 3px solid #FFF;
+  padding: 0.6em 2em;
+  outline: none;
+}
+
+.start-button:hover {
+  background: #2BA8D9;
+  border-color: #2BA8D9;
+  color: #FFF388;
+  cursor: pointer;
+}
+
+.output {
+  display: block;
+}
+
+.list {
+  margin-top: 2em;
+}
+
+.string-container {
+  background: #FFF388;
+  float: left;
+  width: 18.9%;
+  height: 3em;
+  font-size: 1.5em;
+  color: #2BA8D9;
+  text-align: center;
+  padding: 0.8em;
+  margin: 0.2em;
+}
+
+.col-md-1 {
+  float: left;
+  width: 15%;
+  text-align: center;
+}
+
+.col-md-3 {
+  width: 70%;
+  float: left;
+  padding:0 1.5em;
+}
+/*=====================
+      Font styling
+=======================*/
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 12em;
+  line-height: 0.4em;
+  color: #2BA8D9;
+  margin: 0.5em 0;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #FFF;
+  line-height: 1.8em;
+}
+
+.intro p:first-child {
+  font-size: 1.6em;
+  color: #FFA848;
+  margin-top: 10em;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: #FFA848;
+}
+
+/*========================
+  Footer content styling
+=========================*/
+.footer-push {
+  height: 280px;
+  clear: both;
+}
+
+footer {
+  width: 100%;
+  background: #3D3C40;
+  height: 300px;
+  padding: 4em 0 0;
+  position: relative;
+  margin-top: 10em;
+  display: block;
+
+}
+
+footer p {
+  font-size: 0.7em;
+  color: #FFF;
+  font-weight: 400;
+  float: left;
+}
+
+.social {
+  float: right;
+  padding-bottom: 2em;
+}
+
+.social > li {
+  text-decoration: none;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.social > li:last-child {
+  padding-right: 0;
+}
+
+.social > li a {
+  color: #FFF;
+  font-size: 2.5em;
+  text-decoration: none;
+}
+
+.social > li a:hover {
+  text-decoration: none;
+}
+
+.social > li a i {
+  color: #FFA848;
+}
+
+.social > li a i:hover {
+  color: #FFF;
+}

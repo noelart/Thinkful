@@ -1,0 +1,306 @@
+/* Thinkful Quizz Stylesheets */
+
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+/*============================
+			Main styles
+=============================*/
+
+body {
+  background: #101824;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6em;
+	overflow: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+main {
+  min-height: 100%;
+  margin-bottom: -270px;
+  height: auto !important;
+}
+
+.container {
+	width: 928px;
+	margin: 0 auto;
+}
+
+.start-button, .next-button, .start-quiz {
+	 font-size: 1.6em;
+  font-weight: 700;
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  background: #B7C11E;
+  border: 3px solid #B7C11E;
+  padding: 0.6em 1.4em;
+  margin: 2em auto 0.8em;
+  outline: none;
+}
+
+.start-button:hover, .next-button:hover {
+	 background: #EFF1C2;
+  border-color: #EFF1C2;
+  color: #2E313D;
+  cursor: pointer;
+}
+
+.col-md-1 {
+  float: left;
+  width: 15%;
+  text-align: center;
+}
+
+.col-md-3 {
+  width: 60%;
+  float: left;
+  padding:0 1.5em;
+}
+
+.col-md-third {
+  float: left;
+  width: 30%;
+  padding: 0 0.5em;
+  text-align: center;
+}
+
+.intro {
+  background: url('../images/intro.jpg') no-repeat 50% 60%;
+  background-size: cover;
+  width: 100%;
+	text-align: center;
+  overflow: auto;
+}
+
+.options {
+  display: none;
+  width: 100%;
+  height: 180px;
+}
+
+input {
+  border: none;
+  font-size: 1.8em;
+  font-weight: 600;
+  line-height: 0;
+}
+
+.option {
+  height: 100px;
+  width: 33%;
+  padding: 0;
+}
+
+#optionOne, #optionTwo, #optionThree {
+  background: rgba(255, 255, 255, 0.5);
+  width: 90%;
+  height: 120px;
+  font-size: 1.8em;
+  font-weight: 600;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2em 0;
+}
+
+#optionFinal {
+  background: rgba(255, 255, 255, 0.5);
+  width: 90%;
+  height: 120px;
+  font-size: 1.8em;
+  font-weight: 600;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2em 0;
+}
+
+.score {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 600;
+  color: #F0563D;
+  line-height: 2.5em;
+}
+
+.wrongClass {
+  background: rgba(255, 30, 30, 0.5);
+}
+
+.correctClass {
+  background: rgba(30, 255, 30, 0.5);
+}
+
+/*=====================
+      Font styling
+=======================*/
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 6em;
+  line-height: 1em;
+  color: #F0563D;
+  margin: 1em 0 0.5em;
+}
+
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 6em;
+  line-height: 1em;
+  color: #F0563D;
+  margin: 1.6em 0 0.5em;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #F0563D;
+  line-height: 1.8em;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.quiz-intro {
+  background: url('../images/london.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  overflow: auto;
+  min-height: 600px;
+  height: 100%;
+}
+/*.intro p:first-child {
+  font-size: 1.6em;
+  color: #B7C11E;
+  text-transform: uppercase;
+}*/
+
+h4 {
+  color: #F0563D;
+}
+
+
+/*========================
+  Footer content styling
+=========================*/
+.footer-push {
+  height: 300px;
+  clear: both;
+}
+
+footer {
+  width: 100%;
+  background: #101824;
+  height: 300px;
+  padding: 4em 0 0;
+  position: relative;
+  margin-top: 10em;
+  display: block;
+
+}
+
+footer p, small {
+  color: #FFF;
+  font-weight: 400;
+  float: left;
+}
+
+footer p {
+  font-size: 0.9em;
+}
+
+footer small {
+  font-size: 0.7em;
+}
+
+footer .counter {
+  display: none;
+  margin-top: 1em;
+  float: left;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  border-radius: 5px;
+  height: 80px;
+}
+
+footer .count {
+  display: block;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 600;
+  color: #F0563D;
+  line-height: 2.5em;
+}
+
+.social {
+  float: right;
+  padding-bottom: 2em;
+}
+
+.social > li {
+  text-decoration: none;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.social > li:last-child {
+  padding-right: 0;
+}
+
+.social > li a {
+  color: #FFF;
+  font-size: 2.5em;
+  text-decoration: none;
+}
+
+.social > li a:hover {
+  text-decoration: none;
+}
+
+.social > li a i {
+  color: #F0563D;
+}
+
+.social > li a i:hover {
+  color: #FFF;
+}

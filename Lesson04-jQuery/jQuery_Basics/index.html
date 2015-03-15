@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Basics</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+
+<!-- Content -->
+  <div class="container intro">
+    <h1>jQuery Basics</h1>
+    <section>
+      <p>The idea of DOM is that every node is an object. We can get a node and change its properties.</p>
+      <pre>
+      <code>
+      document.body.style.backgroundColor = 'red'
+      </code>
+      </pre>
+
+      <p><span>$</span> represents the window.jquery object.</p>
+      <pre>
+        <code>
+          $(document).ready(function() {
+           /*Execution javascript code*/
+          });
+        </code>
+      </pre>
+    </section>
+
+    <section>
+    <h3>Finding elements in the DOM</h3>
+    <p>Changing the text node in a span element node</p>
+    <p>This item is on offer this week! <span>$300</span> only.</p>
+    <p>This item is on offer this week! <span class="price">$300</span> only.</p>
+    <pre>
+      <code>
+        $('.price').text('$100');
+      </code>
+    </pre>
+    </section>
+
+    <section>
+      <h3>Descendant Selector</h3>
+      <p>Finding all children nodes <span>li</span> of a particular parent node <span>#destinations</span></p>
+      <ul id="destinations">
+        <li>Rome</li>
+        <li>
+          <ul id="other-destination">
+            <li>Paris</li>
+          </ul>
+        </li>
+        <li>Madrid</li>
+        <li>London</li>
+      </ul>
+      <pre>
+        <code>
+          $('#destinations li').css({'text-transform' : 'uppercase', 'color' : '#8E001C'});
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Child selector</h3>
+      <p>Finding the direct selector <span>li</span> of a particular parent node <span>#destinations</span></p>
+      <ul id="second-destinations">
+        <li>Milan</li>
+        <li>
+          <ul id="other-destination">
+            <li>Marseilles</li>
+          </ul>
+        </li>
+        <li>Barcelona</li>
+        <li>Manchester</li>
+      </ul>
+      <pre>
+        <code>
+          $('#second-destinations > li').css({'list-style' : 'none'});
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Multile selectors</h3>
+      <p>Finding more than one selector by target a <span>class</span> or <span>id</span></p>
+       <ul id="third-destinations">
+        <li>Venice</li>
+        <li>
+          <ul id="france">
+            <li>Lyons</li>
+          </ul>
+        </li>
+        <li>Seville</li>
+        <li class="promo">Edinburgh</li>
+      </ul>
+      <pre>
+        <code>
+          $('#france, .promo').css({'font-weight' : 'bold', 'color' : '#008800'});
+        </code>
+      </pre>
+
+      <h3>Pseudo-elements selectors</h3>
+      <p>Finding the <span>:first</span> and <span>:last</span> and <span>odd</span> selector</p>
+      <ul class="modes">
+        <li>car</li>
+        <li>bike</li>
+        <li>plane</li>
+        <li>boat</li>
+        <li>train</li>
+      </ul>
+      <pre>
+        <code>
+        $('.modes li:first, .modes li:last').css({'color' : '#CC2244'});
+        $('.modes li:odd').css({'font-weight': 'bold', 'border': '1px solid #222222', 'width': '80px'});
+        </code>
+      </pre>
+    </section>
+  </div>
+<!-- END:Content -->
+
+  </main>
+</body>
+</html>

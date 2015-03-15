@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - Arithmetic</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/arithmetic.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Numbers, Arithmetic Operators and Comparators</h1>
+      <section class="col-md-3">
+        <h3>Numbers</h3>
+        <p>Numbers are one of the primitive types defined in JavaScript.</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i>Five arithmetic operators in JavaScript:
+            <ul>
+            <li>mulitplication</li>
+            <li>division</li>
+            <li>addition</li>
+            <li>subtraction</li>
+            <li>modulus</li>
+            </ul>
+          </li>
+          <li><i class="fa fa-check"></i>Operator precedence refers to teh order of execution is based on <span>PEMDAS</span>:
+            <ul>
+              <li>Parenthesis</li>
+              <li>Exponents</li>
+              <li>Multiplication/Division</li>
+              <li>Addition/Subtraction</li>
+            </ul>
+          </li>
+          <li><i class="fa fa-check"></i>Modulus operator performs an implied division and returns the remainder.</li>
+          <pre>
+            <code>
+            var modulus = function(num1, num2) {
+              return num1 % num2;
+            };
+             <span class="green"><em>Output:</em></span>
+            console.log('Modulus: ' + modulus(50, 4)); <span class="green">Modulus: 2</span>
+            </code>
+          </pre>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Applying ternary operator</h3>
+        <p>The ternary operator serves as an alternative to the if statement </p>
+        <pre>
+          <code>
+            <span class="green">&lt;variable&gt; = &lt;expression&gt; ? &lt;true clause&gt; : &lt;false clause&gt;</span>
+          </code>
+        </pre>
+        <ol>
+          <li>Does &lt;expression&gt; evaluate to true, or does it evaluate to false?</li>
+          <li>If &lt;expression&gt; evaluates to true, then the value of &lt;true clause&gt; is assigned to &lt;variable&gt;, &lt;false clause&gt; is ignored, and the next statement is executed.</li>
+          <li>If &lt;expression&gt; evaluates to false, then &lt;true clause&gt; is ignored and the value of &lt;false clause&gt; is assigned to &lt;variable&gt;.</li>
+        </ol>
+      </section>
+
+      <section>
+      <h3>Protoype for arithmetic functions</h3>
+      <p>A sum prototype with various arithmetic functions</p>
+      <pre>
+        <code>
+        var Sum = function(num1, num2) {
+          this.num1 = num1;
+          this.num2 = num2;
+        };
+
+        Sum.prototype = {
+          add : function(num1, num2) {
+            return num1 + num2;
+          },
+
+          subtract : function(num1, num2) {
+              var output = (num1 > num2) ? (num1 - num2) : (num2 - num1);
+              return output;
+          },
+
+          multiply : function(num1, num2) {
+            return num1 * num2;
+          },
+
+          divide : function(num1, num2) {
+            var output = (num1 > num2) ? (num1 / num2) : (num2 / num1);
+            return output;
+          }
+        };
+
+        var sum = new Sum();
+        console.log(sum.add(11, 44));
+        console.log(sum.subtract(73, 33));
+        console.log(sum.multiply(10, 20));
+        console.log(sum.divide(20, 400));
+        </code>
+      </pre>
+      </section>
+
+      <section>
+      <h3>Comparators</h3>
+      <p>The comparison operators are available for comparing any two data types:</p>
+      <ul class="list">
+        <li><span>></span> greater than</li>
+        <li><span><</span> less than</li>
+        <li><span>==</span> equality</li>
+        <li><span>===</span> strict equality</li>
+        <li><span>!=</span> not equals</li>
+        <li><span>!==</span> strict not equality</li>
+        <li><span>>=</span> greater or equal to</li>
+        <li><span><=</span> less or equal to</li>
+      </ul>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

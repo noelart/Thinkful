@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript basics - conditionals</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/conditionals.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Conditional programming</h1>
+      <section class="col-md-3">
+        <h3>Introduction</h3>
+        <p>A coditional is a statement which resolves to either <span class="green">true</span> or <span class="green">false</span>:</p>
+        <ul class="list">
+          <li>If Condition is true: <span class="green"> var === value</span>. When conditon is met the flow of control returns or assigns a value or calls a function.
+            <pre>
+              <code>
+              if (value === 5) {
+                  return correct;
+              } else {
+                  return wrong;
+              }
+              </code>
+            </pre>
+          </li>
+
+          <li>If Condition is false: <span class="green"> var != value</span>
+            <pre>
+              <code>
+              if (city != 'Sydney') {
+                  return 'London';
+              } else {
+                  return 'Sydney';
+              }
+              </code>
+            </pre>
+          </li>
+        </ul>
+        <p>When testing a condition for a numeric value always use strict equality <span>===</span> as in</p>
+        <div>
+          <pre class="col-md-1">
+            <code>
+              if(value === 5){}
+            </code>
+          </pre>
+        </div>
+        <div class="clear"></div>
+        <p>When testing for a condition when the value is not eqaul to use <span>!==</span> </p>
+        <h3>Chained conditionals</h3>
+        <p>Conditions can be chained together <span class="green">starting with if</span>, followed by <span class="green">one or more else if</span> and finish with <span class="green">else</span>, normally used as the default conditional.</p>
+        <pre>
+          <code>
+            var canIGet = function(money, item) {
+              var items = ["MacBook Air", "MacBook Pro", "Mac Pro", "Mac mini"];
+              var purchase = null;
+
+              if ((item == items[0]) && (money >= 1200)) {
+                purchase = true;
+                } else if ((item == items[1]) && (money >= 1299)) {
+                  purchase = true;
+                } else if ((item == items[2]) && (money >= 2499)) {
+                  purchase = true;
+                } else if ((item == items[3]) && (money >= 500)) {
+                  purchase = true;
+                } else {
+                  purchase = false;
+                }
+              return purchase;
+            };
+
+            console.log(canIGet(2000, 'MacBook Pro'));
+          </code>
+        </pre>
+
+        <h3>Testing for truthiness</h3>
+        <p>The notions of truthy and falsy are used to capture this idea that there are values other than the booleans true and false that nevertheless evaluate to true or false in conditional statements.</p>
+        <p>A list of falsy values:</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i>Boolean value <span class="green">FALSE</span></li>
+          <li><i class="fa fa-check"></i>empty string <span class="green">""</span></li>
+          <li><i class="fa fa-check"></i>number <span class="green">0</span> sometimes this can be a disbaled state of an html element </li>
+          <li><i class="fa fa-check"></i>variable not assigned <span class="green">null</span></li>
+          <li><i class="fa fa-check"></i>variable not defined <span class="green">undefined</span></li>
+          <li><i class="fa fa-check"></i>variable not a number data-type <span class="green">NaN</span></li>
+        </ul>
+        <p>A list of truthy values include:</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i>Boolean value <span class="green">TRUE</span></li>
+          <li><i class="fa fa-check"></i>number <span class="green">1</span> sometimes this can be an enabled state of an html element.</li>
+          <li><i class="fa fa-check"></i>Empty arrays <span class="green">[]</span></li>
+          <li><i class="fa fa-check"></i>Objects <span class="green">{}</span></li>
+          <li><i class="fa fa-check"></i>Functions <span class="green">function(){}</span></li>
+          <li><i class="fa fa-check"></i>Strings matched <span class="green">if (searchString == "London')</span></li>
+          <li><i class="fa fa-check"></i>Expected NOT variable <span class="green">if(!Object.create)</span> mostly used to initialize an object, eg. a username</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>FizzBuzz challenge</h3>
+        <pre>
+          <code>
+            function fizzBuzz() {
+            var fizz = 'Fizz';
+            var buzz = 'Buzz';
+            var array = [];
+            var string = null;
+
+          // Loop
+            for (var i = 0; i <= 100; i++) {
+              if ((i % 3 === 0) && (i % 5 === 0)) {
+                string = fizz + buzz;
+                array.push(string);
+              }
+              else if (i % 3 === 0) {
+                string = fizz;
+                array.push(string);
+              }
+              else if (i % 5 === 0) {
+                string = buzz;
+                array.push(string);
+              }
+              else {
+                array.push(i);
+              }
+            }
+            return array;
+          }
+
+          console.log(fizzBuzz());
+          </code>
+        </pre>
+    </section>
+
+    <section>
+    <h3>Geography quiz</h3>
+    <pre>
+          <code>
+            var countries = ['England', 'France', 'Germany', 'Italy', 'Spain', 'Denmark'];
+            var whichCity = function(country) {
+              var city = null;
+              if (country == 'England') {
+                city = 'London';
+              } else if (country == 'France') {
+                city = 'Paris';
+              } else if (country == 'Germany') {
+                city = 'Berlin';
+              } else if (country == 'Italy') {
+                city = 'Rome';
+              } else if (country == 'Spain'){
+                city = 'Madrid';
+              } else {
+                city = "City not listed";
+              }
+              return city;
+            };
+
+            var listOfCities = function(array) {
+              var output =[];
+              for(var i = 0; i < array.length; i++) {
+                var city = whichCity(array[i]);
+                output.push(array[i] + ': ' + city);
+              }
+              return output;
+            };
+
+            console.log(listOfCities(countries));
+          </code>
+        </pre>
+    </section>
+
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

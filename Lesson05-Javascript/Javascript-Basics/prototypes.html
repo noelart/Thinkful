@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javscript-Basics</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/prototypes.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+</head>
+<body>
+<main>
+      <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+<!-- Content -->
+    <div class="container intro">
+      <h1>Prototypes</h1>
+      <p>A prototype-based object system gets makes a copy of an existing object, a prototype, for each new object, instead of making an instance of a class. Each object can then be modified from its original prototype with <span class="green">var newObject = Object.create(originalObject)</span></p>
+      <section>
+        <ul class="list">
+        <li><span class="green">Prototype</span> are distinct data types belogning to an object.
+          <pre>
+            <code>
+              var baseObject = {
+                num: 2,
+                sum: function() {
+                  return this.num + 1;
+                }
+              };
+
+              console.log( baseObject.num + '\n' + baseObject.sum());
+
+              /* creating a prototype that inherits from baseObject */
+
+              var inheritObject = Object.create(baseObject);
+              inheritObject.num <span class="green">2</span>
+              inheritObject.sum()); <span class="green">3</span>
+            </code>
+          </pre>
+        </li>
+
+        <li><span class="green"></span></li>
+      </ul>
+    </section>
+  </div>
+  </main>
+
+</body>
+</html>

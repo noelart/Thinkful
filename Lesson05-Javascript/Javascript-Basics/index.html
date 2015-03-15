@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javscript basics</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/main.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <img class="logo" src="images/JS-logo.png">
+      <ul class="links">
+        <li>
+            <a href="index.html">Data types</a>
+        </li>
+        <li>
+            <a href="arithmetic.html">Arithmetic operators</a>
+        </li>
+        <li>
+            <a href="strings.html">Working with strings</a>
+        </li>
+        <li>
+            <a href="variables.html">Working with variables</a>
+        </li>
+        <li>
+            <a href="conditionals.html">Conditionals</a>
+        </li>
+        <li>
+            <a href="booleans.html">Booleans</a>
+        </li>
+        <li>
+            <a href="arrays.html">Arrays</a>
+        </li>
+        <li>
+           <a href="loops.html">Loops</a>
+        </li>
+        <li>
+            <a href="functions.html">Functions</a>
+        </li>
+        <li>
+            <a href="objects.html">Objects</a>
+        </li>
+        <li>
+            <a href="prototypes.html">Prototypes</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Data types</h1>
+      <p>JavaScript is classified as a prototype-based scripting language with dynamic typing and first-class functions. It has <span class="green">Type inference</span> meaning it can auto deduct the data type if a number is a string or a number. Or a number is a float or an int.</p>
+      <section class="col-md-3">
+        <h3>Numbers</h3>
+        <p>Javascript only have one type of numbers: 64-bit floating unit. Integer values in JavaScript can run from negative to positive 9,007,199,254,740,992, and decimal values can get as small as 5x10-324.</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i>Values larger than the integer limit are represented by <span>∞</span>.</li>
+          <li><i class="fa fa-check"></i>Values which are not numbers but are String-type are represented by <span>NaN</span></li>
+        </ul>
+        <pre>
+          <code>
+            var sum = function() {
+            return 12 / 'hello';
+            };
+            <span class="green"><em>Output:</em></span>
+            console.log(sum()); <span class="green">NaN</span>
+
+            var num = 22;
+            <span class="green"><em>Output:</em></span>
+            console.log(typeof num); <span class="green">number</span>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Strings</h3>
+        <p>Strings are an array of alphanumeric characters</p>
+        <pre>
+          <code>
+            var name = "Pierre";
+            <span class="green"><em>Output:</em></span>
+            console.log(typeof name); <span class="green">string</span>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Booleans</h3>
+        <p>Boolean value can either be <span>TRUE</span> or <span>FALSE</span></p>
+        <pre>
+          <code>
+            var showValue = true;
+            <span class="green"><em>Output:</em></span>
+            console.log(typeof showValue); <span class="green">boolean</span>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Functions</h3>
+        <p>Are javasciprt objects that perform an action or return a value.</p>
+        <ul class="list">
+          <li><i class="fa fa-check"></i>Anonymous functions</li>
+          <li><i class="fa fa-check"></i>Named functions</li>
+        </ul>
+        <pre>
+          <code>
+            var sayHello = function(name) {
+              return 'Hello ' + name;
+            };
+            <span class="green"><em>Output:</em></span>
+            console.log(sayHello('Scott')); <span class="green">Hello Scott</span>
+          </code>
+        </pre>
+      </section>
+
+        <section>
+        <h3>Objects</h3>
+        <p>Objects are a composite Javascript object combinig properties and methods - functions which are an object porperty.</p>
+        <pre>
+          <code>
+            <span class="green"><em>Object literal:</em></span>
+            var person = {
+              firstName : 'Noel',
+              secondName : 'Sydeny',
+              age : 22
+            };
+            <span class="green"><em>Output:</em></span>
+            console.log('First name :' + person.firstName + '\n' + 'Second name: ' + person.secondName + '\n' + 'age : ' + person.age);
+            <span class="green">First name :Noel
+            Second name: Sydeny
+            age : 22</span>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Null</h3>
+        <p>Null is used to assign a placeholder value to a variable when it has no other value. It signifies the absence of a specific value.</p>
+        <pre>
+          <code>
+            var valueNotAssigned = null;
+            <span class="green"><em>Output:</em></span>
+            console.log(typeof valueNotAssigned); <span class="green">object</span>
+          </code>
+        </pre>
+      </section>
+
+     <section>
+        <h3>Undefined</h3>
+        <p>A variable that is declared but that doesn’t have a value assigned to it. A space in memory is reserved for it.</p>
+        <pre>
+          <code>
+            var valueNotDefined;
+            <span class="green"><em>Output:</em></span>
+            console.log(valuNotDefined); <span class="green">undefined</span>
+          </code>
+        </pre>
+      </section>
+
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

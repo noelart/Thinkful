@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Traversing and Filtering</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/filter.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+  <!-- Content -->
+    <div class="container intro">
+      <h1>Filtering</h1>
+       <scetion>
+        <p>Data tag is an HTML5 attribtue <span>data=""</span>. To use data tag you specify a name and a value <span>data-price="$39.99"</span>.</p>
+        <pre>
+          <code>
+            <span>HTML</span>
+            &lt;li class="vacation" data-price="1889"&gt;
+
+            <span>In jQuery</span>
+            var $amount = $(this).closest('.vacation').data('price');
+          </code>
+        </pre>
+        <div id="tours">
+          <ul>
+            <li class="vacation" data-price="1889">
+                <h3 class="destination">New York</h3>
+                <span class="details">$1,899 for 7 nigths</span>
+                <button class="book-select">Book now</button>
+            </li>
+            <li class="vacation" data-price="799">
+                <h3 class="destination">Milan</h3>
+                <span class="details">$799 for 7 nigths</span>
+                <button class="book-select">Book now</button>
+            </li>
+            <li class="vacation" data-price="2999">
+                <h3 class="destination">Tokyo</h3>
+                <span class="details">$2,999 for 7 nigths</span>
+                <button class="book-select">Book now</button>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+
+        <div class="col-md-3">
+        <pre>
+          <code>
+              $('button').on('click', function() {
+              var $vacation = $(this).closest('.vacation');
+              var $amount = $vacation.data('price');
+              var $price = $('&lt;p&gt;From $' +$amount + '&lt;/p&gt;');
+
+              $vacation.append($price);
+              $(this).remove();
+            });
+          </code>
+        </pre>
+      </div>
+    </scetion>
+
+    <section>
+    <h3>Event delegation</h3>
+    <p>Delegation involves to listen to jquery event happening in a class and passed to a particular element. To target <span>'button'</span> only if inside a <span>$('.vacation')</span>:</p>
+    <div class="col-md-3">
+      <pre>
+        <code>
+          $('.vacation').on('click', 'button', function() {});
+        </code>
+      </pre>
+    </div>
+  </section>
+
+  <section>
+    <h3>Filtering HTML</h3>
+    <p>Filtering helps finding particular elements with a data attribute. Find elements with a parent-class of <span>$('.vacation')</span> and filter those with <span>'.onsale'</span> and then run the <span>event-handler ~ function() {}</span> </p>
+    <pre>
+      <code>
+        $('#filters').on('click', '.onsale-filter', funciton() {
+          $(.vacation).filter('.onsale');
+        });
+      </code>
+    </pre>
+    <div class="col-md-3" id="filters">
+      <ul>
+        <li><button class="onsale-filter">On Sale now</button></li>
+        <li><button class="expiring-filter">Expiring</button></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div id="tours">
+      <ul>
+        <li class="vacation onsale" data-price="1889">
+            <h3 class="destination">New York</h3>
+            <span class="details">$1,899 for 7 nigths</span>
+            <button class="book-select">Book now</button>
+        </li>
+        <li class="vacation onsale" data-price="799">
+            <h3 class="destination">Milan</h3>
+            <span class="details">$799 for 7 nigths</span>
+            <button class="book-select">Book now</button>
+        </li>
+        <li class="vacation expiring" data-price="2999">
+            <h3 class="destination">Tokyo</h3>
+            <span class="details">$2,999 for 7 nigths</span>
+            <button class="book-select">Book now</button>
+        </li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div>
+
+    </div>
+    </section>
+    </div>
+  <!-- END:Content -->
+  </main>
+
+</body>
+</html>

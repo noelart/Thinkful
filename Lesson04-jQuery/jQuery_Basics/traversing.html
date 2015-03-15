@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Traversing the DOM</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main>
+  <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="http://api.jquery.com" target="_blank"><img class="logo" src="assets/logo-jquery.png"></a>
+      <ul class="links">
+        <li>
+            <a href="index.html">jQuery basics</a>
+        </li>
+        <li>
+            <a href="traversing.html">Traversing the DOM</a>
+        </li>
+        <li>
+            <a href="manipulate_dom.html">Manipulating the DOM</a>
+        </li>
+        <li>
+            <a href="filtering.html">Traversing and filtering</a>
+        </li>
+        <li>
+            <a href="events.html">jQuery Events</a>
+        </li>
+        <li>
+            <a href="keyboard_events.html">Keyboard events</a>
+        </li>
+        <li>
+            <a href="link_layover.html">Link layover</a>
+        </li>
+        <li>
+            <a href="css_styles.html">Methods with CSS styles</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>&copy; 2014 Noel Zahra</p>
+      </div>
+    </nav>
+
+
+<!-- Content -->
+  <div class="container intro">
+    <h1>Traversing and searching the DOM</h1>
+    <section>
+      <h3>Traversing</h3>
+      <p>Using specific elements is faster to access the DOM than  using <span>.find()</span>, <span>.prev()</span> and <span>.next()</span></p>
+      <p>Method chaining is the ability to call multiple jQuery methods in a row on a single object. This is possible because every call to a jQuery method returns the jQuery object that it operated on.</p>
+      <ul>
+        <li>Parent &lt;ul&gt; element: transport routes</li>
+        <li>
+          <ul class="routes">
+            <li>mountain route</li>
+            <li>sea route</li>
+            <li>land route</li>
+            <li>air link</li>
+          </ul>
+        </li>
+      </ul>
+      <pre>
+        <code>
+         $('.routes li').first().css({'color' : '#CC2244'});
+         $('.routes li').last().prev().css({'color' : '#008800'});
+        </code>
+      </pre>
+      <p>Method chaining to access parent or chidlren using <span>.children()</span>, <span>.parent()</span></p>
+      <pre>
+        <code>
+          $('.routes').parent().prev().css({'list-style' : 'none', 'text-transform' : 'uppercase'});
+        </code>
+      </pre>
+      <p>Method chaining using <span>.find()</span> will select all children elements within that class</p>
+      <ul class="sports">
+        <li>Street run</li>
+        <li>Trail run</li>
+        <li>Triathlon</li>
+        <li>
+          <ul>
+            <li>Swim</li>
+            <li>Cycling</li>
+          </ul>
+        </li>
+      </ul>
+      <pre>
+        <code>
+          $('.sports').find('li').css({'background' : '#CC2244', 'color' : '#FFF', 'display' : 'inline-block', 'padding' : '0.2em'});
+        </code>
+      </pre>
+    </section>
+  </div>
+<!-- END:Content -->
+  </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/*=====================
+        Basic css
+=======================*/
+
+/** {
+  outline: red 1px solid;
+}*/
+
+html {
+  width: 100%;``
+}
+
+body {
+  background: #000;
+  font-size: 16px;
+}
+
+main {
+  background: #FFF;
+  margin-top: 110px;
+  padding-left: 100px;
+  min-width: 1200px;
+  height: 500px;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+/*=====================
+    main charatcer
+=======================*/
+
+.container, .ryu {
+  float: left;
+}
+
+
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
+  background-repeat: no-repeat;
+}
+
+.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
+  width: 659px;
+  height: 494px;
+}
+
+.ryu-ready, .ryu-throwing, .ryu-cool {
+  display: none;
+}
+
+.ryu-ready {
+  background: url('../images/ryu-ready-position.gif');
+}
+
+.ryu-still {
+  background: url('../images/ryu-standing-still.png');
+}
+
+.ryu-throwing {
+  background: url('../images/ryu-throwing-hadouken.png');
+}
+
+.ryu-cool {
+  background: url('../images/ryu-cool.gif');
+}
+
+.hadouken {
+  background: url('../images/hadouken.gif');
+  width: 156px;
+  height: 90px;
+  display: none;
+  float: left;
+  position: relative;
+  top: 170px;
+  left: -160px;
+}

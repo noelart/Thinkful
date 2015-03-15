@@ -1,0 +1,112 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('../images/star-wars-backdrop.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 16pt;
+  margin: 0;
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  background: #001A1A;
+  padding: 30px;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 60px;
+  line-height: 1;
+}
+
+.logo {
+  color: #FF358B;
+}
+
+h1 {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+  color: #88CCDD;
+}
+
+h1 > i {
+  color: #FF4444;
+  font-size: 3em;
+}
+
+h2 {
+  color: #AEEE00;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.intro p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  color: #01B0F0;
+}
+
+input {
+  color: #333;
+  font-size: 1em;
+  height: 2.3em;
+}
+
+button {
+  background: #88CC00;
+  display: inline-block;
+  font-family: 'Droid sans', sans-serif;
+  font-size: 1em;
+  color: #FFF;
+  border-radius: 5px;
+  outline: none;
+  border: 3px solid #88CC00;
+  padding: 0.4em 1em;
+  margin-left: 1em;
+}
+
+button:hover {
+  background: #11DD00;
+  border-color: #11DD00;
+  cursor: pointer;
+}
+
+.video-link {
+  color: #ccffcc;
+  margin: 0.5em 0 1em;
+}
+
+.video-link a {
+  font-family: 'Droid Sans', sans-serif;
+  color: #ccffcc;
+  font-size: 0.6em;
+
+  text-decoration: none;
+}
+
+.video-link a:hover {
+  border-bottom: 1px solid #ccffcc;
+}
+
+.thumb {
+  height: 180px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.6em;
+  color: #88CCDD;
+}

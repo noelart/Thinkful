@@ -1,0 +1,38 @@
+/* Stylesheet */
+
+html {
+	min-height: 100%;
+}
+
+body {
+	font-family: 'Georgia', serif;
+	font-size: 12pt;
+	line-height: 1.6em;
+	background: -webkit-linear-gradient(top, rgb(25, 100, 176) 50%, rgb(72, 236, 238) 100%) no-repeat;
+}
+
+h1, h3 {
+	font-family: 'Tahoma', helvetica, sans-serif;
+	font-weight: normal;
+	margin-bottom: -5px;
+	color: red;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+.container{
+	width: 900px;
+	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}

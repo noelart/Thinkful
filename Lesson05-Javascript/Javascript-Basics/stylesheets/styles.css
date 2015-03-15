@@ -1,0 +1,218 @@
+/*===========================
+       main.css
+==============================*/
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #FDFBDD;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  color: #424242;
+  margin: 0;
+  line-height: 1.4em;
+}
+
+.clear {
+  clear: both;
+}
+
+/*============================
+           Layout
+==============================*/
+
+
+/*============================
+          Navigation
+=============================*/
+
+.nav-bar {
+  background: -webkit-linear-gradient(120deg, rgb(80, 240, 90), rgb(255, 204, 16));
+  background: -moz-linear-gradient(120deg, rgb(80, 240, 90), rgb(255, 204, 16));
+  background: -o-linear-gradient(120deg, rgb(80, 240, 90), rgb(255, 204, 16));
+  background: linear-gradient(120deg, rgb(80, 240, 90), rgb(255, 204, 16));
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.nav-bar img {
+  width: 70%;
+  height: auto;
+  padding: 2em;
+}
+
+.nav-bar .links {
+  margin: 0;
+  padding: 1.8em 0 1.8em 1.8em;
+  list-style: none;
+}
+
+.nav-bar .links li {
+  padding: 0;
+  display: block;
+  width: 100%;
+}
+
+/* setting padding and background transparent in 'a'*/
+.nav-bar .links li a {
+  background: transparent;
+  font-family: 'Lucida Grande', Arial, sans-serif;
+  font-size: 0.8em;
+  color: #424242;
+  padding: 1em 1em 1em 0.5em;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(180, 180, 180, 0.4);
+  display: block;
+}
+
+/* fill background and change border */
+.nav-bar .links li a:hover, .nav-bar .links li a:active {
+  font-weight: bold;
+  color: rgb(90, 200, 40);
+  cursor: pointer;
+  background: #FDFBDD;
+  border-bottom: 2px solid rgba(90, 200, 40, 0.8);
+}
+
+.nav-bar .footer {
+  font-size: 0.7em;
+  color: #FBF7E4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2.5em
+}
+
+
+/*=========================
+      Columns
+=========================*/
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 13em;
+  position: absolute;
+  left: 14em;
+}
+
+.intro {
+  padding: 5em;
+  min-height: 600px;
+}
+
+.col-md-1 {
+  width: 29%;
+  float: left;
+}
+
+.col-md-1 .panel {
+  background: rgba(60, 80, 80, 0.5);
+  padding: 1em;
+  margin-right: 0.9em;
+}
+
+.col-md-1:last-child {
+  margin-right: 0;
+}
+
+.col-md-2 {
+  width: 63%;
+  float: left;
+  margin: 1em;
+}
+
+.col-md-3 {
+  width: 100%;
+  display: block;
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list li {
+  margin: 0.6em 0 0;
+}
+
+.list i {
+  padding-right: 0.5em;
+  color: rgb(90, 200, 40);
+}
+
+/*==================
+    code
+====================*/
+pre {
+  background: #FEFDF3;
+  border: 1px solid #424242;
+  border-radius: 5px;
+  margin: 0.8em 0;
+  white-space: pre-line;
+  white-space: -moz-pre-line;
+  white-space: -o-pre-line;
+  word-wrap: break-word;
+  padding-left: 1em;
+}
+
+code {
+  color: #424242;
+}
+
+/*===========================
+         Font styling
+=============================*/
+
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+  color: #424242;
+}
+
+h3, h4 {
+  margin: 2em 0 0.8em;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #228800;
+}
+
+h4 {
+  font-size: 1em;
+  color: #FFF;
+}
+
+h3.destination, h4.destination {
+  text-align: center;
+  margin: 0.8em 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+span {
+  color: #8E001C;
+  font-weight: bold;
+}
+
+span.blue {
+  color: rgb(110, 240, 80);
+  font-weight: bold;
+  padding: 0;
+}
+
+span.green {
+  color: #228800;
+}
