@@ -431,7 +431,7 @@ footer {
 h1 {
   font-size: 3em;
   line-height: 1.2em;
-  background: -webkit-linear-gradient(rgb(18, 113, 219), rgb(160, 200, 240));
+  background: -webkit-linear-gradient(rgb(67,147,230) rgb(160, 200, 240));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
